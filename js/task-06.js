@@ -12,11 +12,20 @@ function onInputChange(event) {
     inputText = event.currentTarget.value;
 
     console.log(inputText);
+    console.log(inputText.length);
     };
 
+
+
 function onInputBlur(event) {
-    if (inputText.length = inputEl.dataLength) {
-        inputEl.id = "validation-input.valid";
+    inputEl.classList.add('invalid');
+    
+    if (inputText.length === Number.parseInt(inputEl.getAttribute(["data-length"]))) {
+        inputEl.classList.remove('invalid');
+        inputEl.classList.add('valid');
     };
- inputEl.id = "validation-input.invalid";
+
 };
+
+console.log(Number.parseInt(inputEl.getAttribute(["data-length"])));
+console.log(inputText.length);
