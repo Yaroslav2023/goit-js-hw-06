@@ -18,14 +18,19 @@ function onInputChange(event) {
 
 
 function onInputBlur(event) {
-    inputEl.classList.add('invalid');
     
-    if (inputText.length === Number.parseInt(inputEl.getAttribute(["data-length"]))) {
-        inputEl.classList.remove('invalid');
+    if ( inputText.length === Number.parseInt(inputEl.getAttribute(["data-length"])) ) {
         inputEl.classList.add('valid');
+        inputEl.classList.remove('invalid');
+    } 
+    if ( inputText.length !== Number.parseInt(inputEl.getAttribute(["data-length"])) ) {
+        inputEl.classList.add('invalid');
+        inputEl.classList.remove('valid');
+    } 
+
+    if ( inputText.length === 0 )  {
+        inputEl.classList.remove('valid');
+        inputEl.classList.remove('invalid');
     };
 
 };
-
-console.log(Number.parseInt(inputEl.getAttribute(["data-length"])));
-console.log(inputText.length);

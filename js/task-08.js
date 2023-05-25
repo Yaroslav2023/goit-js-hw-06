@@ -10,9 +10,15 @@ function handleSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return console.log("Всі поля повинні бути заповнені!");
+    return alert("Всі поля повинні бути заповнені!");
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  const result = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(result);
   event.currentTarget.reset();
 };
+
+

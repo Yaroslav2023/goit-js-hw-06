@@ -14,10 +14,6 @@ const images = [
 ];
 
 const galleryElement = document.querySelector(".gallery");
-galleryElement.style.display = "flex";
-galleryElement.style.gap = "20px";
-galleryElement.style.width = "300px";
-
 
 const makeGalleryCard = ({url, alt}) => `<li class="gallery-item">
 <img src="${url}" alt="${alt}" width= "300px">
